@@ -5,6 +5,12 @@ import os
 import json
 app = Flask(__name__)
 
+def access_secret_version(secret_id, version_id="latest"):
+    client = secretmanager.SecretManagerServiceClient()
+    name = f"projects/533118755108/secrets/{secret_id}/versions/{version_id}"
+    response = client.access_secret_version(name=name)
+    return response.payload.data.decode('UTF-8')
+
 def get_api_key() -> str:
     secret = os.environ.get("COMPUTE_API_KEY")
     if secret:
@@ -21,14 +27,14 @@ def hello():
 @app.route("/test")
 def test():
     #return "Test" # testing 
-    return(get_api_key())
+    return(access_secret_version("compute-api-key"))
 
 @app.route("/add",methods=['GET','POST'])
 def add():
   if request.method=='GET':
     return "Use post to add" # replace with form template
   else:
-    token=get_api_key()
+    token=access_secret_version("compute-api-key")
     ret = addWorker(token,request.form['num'])
     return ret
 
