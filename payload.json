@@ -12,7 +12,7 @@
       "deviceName": "slave1",
       "initializeParams": {
         "diskSizeGb": "10",
-        "diskType": "projects/cloud-computing-404311/zones/us-west4-b/diskTypes/pd-balanced",
+        "diskType": "projects/cloud-computing-404311/zones/europe-west1-b/diskTypes/pd-balanced",
         "labels": {},
         "sourceImage": "projects/debian-cloud/global/images/debian-11-bullseye-v20231115"
       },
@@ -29,7 +29,7 @@
   "labels": {
     "goog-ec-src": "vm_add-rest"
   },
-  "machineType": "projects/cloud-computing-404311/zones/us-west4-b/machineTypes/e2-medium",
+  "machineType": "projects/cloud-computing-404311/zones/europe-west1-b/machineTypes/e2-medium",
   "metadata": {
     "items": [
       {
@@ -48,7 +48,7 @@
         }
       ],
       "stackType": "IPV4_ONLY",
-      "subnetwork": "projects/cloud-computing-404311/regions/us-west4/subnetworks/default"
+      "subnetwork": "projects/cloud-computing-404311/regions/europe-west1-b/subnetworks/default"
     }
   ],
   "params": {
@@ -83,5 +83,5 @@
   "tags": {
     "items": []
   },
-  "zone": "projects/cloud-computing-404311/zones/us-west4-b"
+  "zone": "projects/cloud-computing-404311/zones/europe-west1-b"
 }
